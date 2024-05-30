@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 class InputText extends StatelessWidget {
   final String? hintText;
   final Widget? prefixIcon;
+  final Widget? prefixText;
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
   final int? maxLength;
@@ -14,11 +15,14 @@ class InputText extends StatelessWidget {
   final Function(String?)? onChanged;
   final bool readOnly;
   final Function()? onTap;
+  
+  
 
   const InputText({
     Key? key,
     this.hintText,
     this.prefixIcon,
+    this.prefixText,
     this.suffixIcon,
     this.keyboardType,
     this.maxLength,

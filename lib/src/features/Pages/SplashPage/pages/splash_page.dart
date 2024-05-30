@@ -9,6 +9,8 @@ class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();
 }
 
+bool _firstTextVisible = false;
+
 class _SplashPageState extends State<SplashPage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
@@ -118,7 +120,7 @@ class _SplashPageState extends State<SplashPage>
 
     _animationCircleSize = Tween<double>(
       begin: 3.h,
-      end: double.infinity,
+      end: 1000.h,
     ).animate(CurvedAnimation(
       parent: _controller,
       curve: const Interval(
@@ -146,7 +148,7 @@ class _SplashPageState extends State<SplashPage>
                     Navigator.push(
                       context,
                       PageRouteBuilder(
-                        transitionDuration: const Duration(milliseconds: 200),
+                        transitionDuration: const Duration(milliseconds: 300),
                         pageBuilder: (_, __, ___) => const OnboardingPage(),
                         transitionsBuilder: (_, animation, __, child) {
                           return SlideTransition(

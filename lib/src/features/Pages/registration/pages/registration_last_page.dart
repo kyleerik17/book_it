@@ -1,11 +1,10 @@
 import 'package:book_it/src/features/Pages/Onboarding/pages/onboarding3_page.dart';
+import 'package:book_it/src/features/Pages/registration/pages/pages.dart';
 import 'package:book_it/src/features/Pages/registration/pages/registration-auth_page.dart';
 import 'package:book_it/src/features/Widgets/buttons/buttons.dart';
 import 'package:book_it/src/features/Widgets/inputs/inputs.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
-import '../registration.dart';
 
 class RegistrationLastPage extends StatelessWidget {
   const RegistrationLastPage({Key? key}) : super(key: key);
@@ -159,6 +158,7 @@ class RegistrationLastPage extends StatelessWidget {
                             ),
                           ),
                           capitalization: TextCapitalization.words,
+                          prefixText: Text(''),
                         ),
                         Positioned(
                           left: 90,

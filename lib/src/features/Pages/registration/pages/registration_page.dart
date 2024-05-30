@@ -6,7 +6,6 @@ import 'package:book_it/src/features/Widgets/inputs/inputs.dart';
 import 'package:flutter/material.dart';
 
 import 'package:sizer/sizer.dart';
-import '../registration.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({Key? key}) : super(key: key);
@@ -160,6 +159,7 @@ class RegistrationPage extends StatelessWidget {
                             ),
                           ),
                           capitalization: TextCapitalization.words,
+                          prefixText: Text(''),
                         ),
                         Positioned(
                           left: 90,
@@ -188,6 +188,7 @@ class RegistrationPage extends StatelessWidget {
                         ),
                       ),
                       capitalization: TextCapitalization.words,
+                      prefixText: Text(''),
                     ),
                     SizedBox(height: 1.h),
                     InputText(
@@ -203,6 +204,7 @@ class RegistrationPage extends StatelessWidget {
                         ),
                       ),
                       capitalization: TextCapitalization.words,
+                      prefixText: Text(''),
                     ),
                     SizedBox(height: 25.h),
                     Center(

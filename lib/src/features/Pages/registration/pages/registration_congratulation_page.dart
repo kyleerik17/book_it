@@ -1,4 +1,6 @@
+import 'package:book_it/src/features/Pages/Login/pages/login.dart';
 import 'package:book_it/src/features/Pages/Onboarding/onboarding.dart';
+import 'package:book_it/src/features/Pages/home/Home/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
@@ -24,11 +26,14 @@ class _RegisterCongratulationPageState
       body: Stack(
         children: [
           Container(
-            height: double.infinity,
-            width: double.infinity,
+            height: 100.h,
+            width: 100.h,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/bg.jpg'), fit: BoxFit.fill),
+                  image: AssetImage(
+                    'assets/images/bg.jpg',
+                  ),
+                  fit: BoxFit.fill),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +104,7 @@ class _RegisterCongratulationPageState
                     context,
                     PageRouteBuilder(
                       transitionDuration: const Duration(milliseconds: 300),
-                      pageBuilder: (_, __, ___) => const OnboardingPage(),
+                      pageBuilder: (_, __, ___) => const LoginPage(),
                       transitionsBuilder: (_, animation, __, child) {
                         return SlideTransition(
                           position: Tween<Offset>(

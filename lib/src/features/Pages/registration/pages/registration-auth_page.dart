@@ -1,7 +1,7 @@
-import 'package:book_it/src/features/Pages/registration/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter/services.dart';
+import 'package:book_it/src/features/Pages/registration/pages/pages.dart';
 
 class RegistrationAuthPage extends StatelessWidget {
   const RegistrationAuthPage({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class RegistrationAuthPage extends StatelessWidget {
       Navigator.push(
         context,
         PageRouteBuilder(
-          transitionDuration: const Duration(milliseconds: 200),
+          transitionDuration: const Duration(milliseconds: 300),
           pageBuilder: (_, __, ___) => const RegistrationLastPage(),
           transitionsBuilder: (_, animation, __, child) {
             return SlideTransition(
@@ -180,16 +180,9 @@ class RegistrationAuthPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 3.h),
-         
-             Image.asset(
-              'assets/icons/sp.png',
-              width: 18.w,
-              height: 18.h,
-              fit: BoxFit.contain,
-            ),
-        
-        
-      ]),
+          ImageRotation(),
+        ],
+      ),
     );
   }
 }
@@ -236,6 +229,51 @@ class NumberTextField extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+}
+
+class ImageRotation extends StatefulWidget {
+  const ImageRotation({Key? key}) : super(key: key);
+
+  @override
+  _ImageRotationState createState() => _ImageRotationState();
+}
+
+class _ImageRotationState extends State<ImageRotation>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Transform.rotate(
+          angle: -_controller.value * 2.0 * 3.141592653589793,
+          child: Image.asset(
+            'assets/icons/sp.png',
+            width: 18.w,
+            height: 18.h,
+            fit: BoxFit.contain,
+          ),
+        );
+      },
     );
   }
 }
