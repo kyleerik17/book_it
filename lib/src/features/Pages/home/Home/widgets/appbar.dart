@@ -51,7 +51,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                       Animation<double> animation,
                       Animation<double> secondaryAnimation) {
                     return FractionallySizedBox(
-                      widthFactor: 0.7,
+                      widthFactor: 0.6,
                       heightFactor: 1,
                       alignment: Alignment.centerLeft,
                       child: SlideTransition(

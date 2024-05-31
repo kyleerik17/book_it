@@ -1,6 +1,7 @@
 import 'package:book_it/src/features/Pages/Favoris/Pages/favoris.dart';
 import 'package:book_it/src/features/Pages/Login/pages/login.dart';
 import 'package:book_it/src/features/Pages/Reservation/pages/pages.dart';
+import 'package:book_it/src/features/Pages/Reservation/reservation_terrain/pages/pages.dart';
 import 'package:book_it/src/features/Pages/SplashPage/pages/splash_page.dart';
 import 'package:book_it/src/features/Pages/home/Home/pages/home_page.dart';
 import 'package:book_it/src/features/Pages/profile/pages/pages.dart';
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return const MaterialApp(
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: SplashPage(),
+          home: ReservTerrainPage(),
         );
       },
     );

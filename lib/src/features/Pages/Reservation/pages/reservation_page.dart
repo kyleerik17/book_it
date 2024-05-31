@@ -102,10 +102,9 @@ class _ReservationPageState extends State<ReservationPage> {
           ),
           Row(
             children: [
-              Gap(2.w),
               Image.asset(
                 'assets/icons/fw.png',
-                width: 6.w,
+                width: 10.w,
                 height: 3.w,
                 color: Colors.black,
               ),
@@ -195,10 +194,9 @@ class _ReservationPageState extends State<ReservationPage> {
           ),
           Row(
             children: [
-              Gap(2.w),
               Image.asset(
                 'assets/icons/fw.png',
-                width: 6.w,
+                width: 10.w,
                 height: 3.w,
                 color: Colors.black,
               ),
@@ -287,10 +285,9 @@ class _ReservationPageState extends State<ReservationPage> {
           ),
           Row(
             children: [
-              Gap(2.w),
               Image.asset(
                 'assets/icons/fw.png',
-                width: 6.w,
+                width: 10.w,
                 height: 3.w,
                 color: Colors.black,
               ),
@@ -393,7 +390,7 @@ class _ReservationPageState extends State<ReservationPage> {
                 Gap(2.w),
                 Image.asset(
                   'assets/icons/fw.png',
-                  width: 6.w,
+                  width: 10.w,
                   height: 3.w,
                   color: Colors.black,
                 ),

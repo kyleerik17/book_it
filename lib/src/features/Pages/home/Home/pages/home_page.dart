@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
           const AppBarWidget(),
           Expanded(
             child: Container(
-              color: Color(0xFFF7F8F9),
+              color: const Color(0xFFF7F8F9),
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 child: Column(
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                     const SearchBarWidget(),
                     SizedBox(height: 2.h),
                     const SliderPage(),
-                    SizedBox(height: 3.h),
+                    SizedBox(height: 2.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -68,9 +68,9 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 1.h),
+                    SizedBox(height: 2.h),
                     const LieuxProches(),
-                    SizedBox(height: 1.h),
+                    SizedBox(height: 2.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
