@@ -590,7 +590,7 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
         side: BorderSide(
           color: isSelected ? const Color(0xFFEA7C17) : Colors.black,
         ),
-        padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 4.w),
+        padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 5.w),
       ),
       onPressed: onPressed,
       child: Column(
