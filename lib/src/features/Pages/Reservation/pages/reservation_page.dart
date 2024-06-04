@@ -1,4 +1,5 @@
 import 'package:book_it/src/features/Pages/Reservation/pages/pages.dart';
+import 'package:book_it/src/features/Pages/Reservation/reservation_terrain/pages/pages.dart';
 import 'package:book_it/src/features/Pages/Reservation/widgets/bottom.dart';
 import 'package:book_it/src/features/Pages/home/Home/widgets/appbar.dart';
 import 'package:book_it/src/features/Pages/home/Mesresas/widgets/widgets.dart';
@@ -305,8 +306,8 @@ class _ReservationPageState extends State<ReservationPage> {
           context: context,
           isScrollControlled: true,
           builder: (context) => const FractionallySizedBox(
-            heightFactor: 0.7,
-            child: ReservationDetails(),
+            heightFactor: 0.9,
+            child: RecapReservPage(),
           ),
         );
       },

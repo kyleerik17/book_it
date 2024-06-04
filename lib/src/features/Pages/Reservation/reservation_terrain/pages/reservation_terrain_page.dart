@@ -1,3 +1,4 @@
+import 'package:book_it/src/features/Pages/Reservation/reservation_terrain/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:book_it/src/features/Pages/Reservation/reservation_terrain/widgets/slider1.dart';
@@ -34,17 +35,22 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 10.w,
-                      height: 10.w,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFEBEBEB),
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          'assets/icons/close.png',
-                          color: const Color(0xFF1F1F1F),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        width: 10.w,
+                        height: 10.w,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xFFEBEBEB),
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            'assets/icons/close.png',
+                            color: const Color(0xFF1F1F1F),
+                          ),
                         ),
                       ),
                     ),
@@ -85,7 +91,7 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                 Row(
                   children: [
                     Icon(Icons.access_time, size: 4.w),
-                    SizedBox(width: 1.w),
+                    SizedBox(width: 0.5.w),
                     Text(
                       "08:00 / 21:00",
                       style: TextStyle(
@@ -137,16 +143,16 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                 "Dates",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 15.sp,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
+                  fontSize: 13.sp,
+                  fontFamily: 'Cabin',
+                  fontWeight: FontWeight.w600,
                 ),
                 textAlign: TextAlign.left,
               ),
             ]),
             SizedBox(height: 1.h),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _buildDateButton(
                   context,
@@ -193,7 +199,7 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                           style: TextStyle(
                             fontSize: 25.sp,
                             fontFamily: 'Cabin',
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         SizedBox(height: 0.5.h),
@@ -238,36 +244,116 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                 width: 4.w,
                 height: 4.w,
               ),
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: '1',
-                  child: Text(
-                    'Option 1',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFF94979E),
-                      fontFamily: 'Cabin',
-                      fontWeight: FontWeight.w400,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '08:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 DropdownMenuItem(
                   value: '2',
-                  child: Text(
-                    'Option 2',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFF94979E),
-                      fontFamily: 'Cabin',
-                      fontWeight: FontWeight.w400,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '09:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                DropdownMenuItem(
+                  value: '3',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '10:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                DropdownMenuItem(
+                  value: '4',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '11:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
               onChanged: (value) {},
-              style: const TextStyle(
-                fontSize: 16.0,
-                color: Color(0xFF94979E),
+              style: TextStyle(
+                fontSize: 11.sp,
+                color: const Color(0xFF94979E),
                 fontFamily: 'Cabin',
                 fontWeight: FontWeight.w400,
               ),
@@ -287,16 +373,16 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
             ]),
             SizedBox(height: 1.h),
             DropdownButtonFormField<String>(
-              decoration: InputDecoration(
-                border: const OutlineInputBorder(),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 1.h, horizontal: 2.h),
+                    EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
               ),
-              hint: const Text(
-                'Choisissez la durée de jeu',
+              hint: Text(
+                'Choisissez la duréé de jeu',
                 style: TextStyle(
-                  fontSize: 16.0,
-                  color: Color(0xFF94979E),
+                  fontSize: 12.sp,
+                  color: const Color(0xFF94979E),
                   fontFamily: 'Cabin',
                   fontWeight: FontWeight.w400,
                 ),
@@ -307,35 +393,115 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                 width: 4.w,
                 height: 4.w,
               ),
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: '1',
-                  child: Text(
-                    'Option 1',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFF94979E),
-                      fontFamily: 'Cabin',
-                      fontWeight: FontWeight.w400,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '08:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 DropdownMenuItem(
                   value: '2',
-                  child: Text(
-                    'Option 2',
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFF94979E),
-                      fontFamily: 'Cabin',
-                      fontWeight: FontWeight.w400,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '09:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                DropdownMenuItem(
+                  value: '3',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '10:00',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                DropdownMenuItem(
+                  value: '4',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        '11:00',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          color: Color(0xFF94979E),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      Text(
+                        'Disponible',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: const Color(0xFF26BF56),
+                          fontFamily: 'Cabin',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
               onChanged: (value) {},
               style: const TextStyle(
-                fontSize: 16.0,
+                fontSize: 12.0,
                 color: Color(0xFF94979E),
                 fontFamily: 'Cabin',
                 fontWeight: FontWeight.w400,
@@ -366,7 +532,24 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
             ),
             SizedBox(height: 3.h),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  PageRouteBuilder(
+                    transitionDuration: const Duration(milliseconds: 300),
+                    pageBuilder: (_, __, ___) => const RecapReservPage(),
+                    transitionsBuilder: (_, animation, __, child) {
+                      return SlideTransition(
+                        position: Tween<Offset>(
+                          begin: const Offset(1.0, 0.0),
+                          end: Offset.zero,
+                        ).animate(animation),
+                        child: child,
+                      );
+                    },
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xFF1A1A1A),
                 onPrimary: Colors.white,
@@ -374,7 +557,7 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                 textStyle: TextStyle(
                   fontSize: 12.sp,
                   fontFamily: 'Cabin',
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               child: const Text('Confirmer'),
