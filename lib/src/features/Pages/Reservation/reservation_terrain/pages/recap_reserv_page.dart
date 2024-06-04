@@ -30,8 +30,9 @@ class RecapReservPage extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 1.h),
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Column(
@@ -46,7 +47,6 @@ class RecapReservPage extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(height: 1.h),
                               Row(
                                 children: [
                                   Image.asset(
@@ -99,8 +99,8 @@ class RecapReservPage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 1.h),
-                    Slider2Page(),
-                    SizedBox(height: 3.h),
+                    const Slider2Page(),
+                    SizedBox(height: 1.h),
                   ],
                 ),
               ),
@@ -109,7 +109,6 @@ class RecapReservPage extends StatelessWidget {
               child: SafeArea(
                 child: Container(
                   color: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 1.h),
                   child: Column(
                     children: [
                       _buildRow("Référence", "MDX 987 992"),
@@ -117,7 +116,70 @@ class RecapReservPage extends StatelessWidget {
                       _buildRow("Terrain", "T05"),
                       _buildRow("Heure de début", "11:30"),
                       _buildRow("Durée", "60 minutes"),
-                      
+                      _buildRowWithButton(
+                        Text(
+                          'Localisation',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Cabin',
+                            color: Colors.black,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                        Text(
+                          'Voir la localisation',
+                          style: TextStyle(
+                            fontFamily: 'Cabin',
+                            color: const Color(0xFFEA7C17),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 1.h),
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 1.h),
+                        width: 92.w,
+                        child: const Divider(
+                          color: Color(0xFFE0E3E6),
+                          thickness: 1,
+                          height: 1,
+                        ),
+                      ),
+                      SizedBox(height: 1.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 1.h, horizontal: 4.w),
+                            child: Expanded(
+                              child: Text(
+                                'TOTAL',
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontFamily: 'Poppins',
+                                  color: const Color(0xFF1A1A1A),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 1.h, horizontal: 4.w),
+                            child: Text(
+                              '68 400 F',
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                color: const Color(0xFF1A1A1A),
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
@@ -133,7 +195,7 @@ class RecapReservPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 4.w),
+      padding: EdgeInsets.symmetric(vertical: 0.5.h, horizontal: 4.w),
       child: Row(
         children: [
           Expanded(
@@ -156,6 +218,20 @@ class RecapReservPage extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRowWithButton(Widget title, Widget button) {
+    return Container(
+      width: double.infinity,
+      color: Colors.white,
+      padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 4.w),
+      child: Row(
+        children: [
+          Expanded(child: title),
+          button,
         ],
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:sizer/sizer.dart';
 import 'package:book_it/src/features/Pages/Reservation/reservation_terrain/widgets/slider1.dart';
 import '../widgets/appbar_reserv.dart';
@@ -13,85 +12,89 @@ class TerrainPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF7F8F9),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const AppBarReserv(),
-            Padding(
-              padding: EdgeInsets.all(3.w),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Le Footeux, Zone 4",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                        SizedBox(height: 1.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(Icons.sports_soccer, size: 5.w),
-                            SizedBox(width: 1.w),
-                            Text(
-                              "Football",
-                              style: TextStyle(
-                                fontFamily: "Cabin",
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: 2.w),
-                            Icon(Icons.access_time, size: 4.w),
-                            SizedBox(width: 0.5.w),
-                            Text(
-                              "08:00 / 21:00",
-                              style: TextStyle(
-                                fontFamily: "Cabin",
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: 2.w),
-                            Image.asset(
-                              'assets/icons/gps.png',
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const AppBarReserv(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Le Footeux, Zone 4",
+                            style: TextStyle(
                               color: Colors.black,
-                              width: 4.w,
+                              fontSize: 12.sp,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
                             ),
-                            SizedBox(width: 1.w),
-                            Text(
-                              'à 0,2 km',
-                              style: TextStyle(
-                                fontFamily: "Cabin",
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w400,
+                            textAlign: TextAlign.left,
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.sports_soccer, size: 5.w),
+                              SizedBox(width: 1.w),
+                              Text(
+                                "Football",
+                                style: TextStyle(
+                                  fontFamily: "Cabin",
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              SizedBox(width: 2.w),
+                              Icon(Icons.access_time, size: 4.w),
+                              SizedBox(width: 0.5.w),
+                              Text(
+                                "08:00 / 21:00",
+                                style: TextStyle(
+                                  fontFamily: "Cabin",
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(width: 2.w),
+                              Image.asset(
+                                'assets/icons/gps.png',
+                                color: Colors.black,
+                                width: 4.w,
+                              ),
+                              SizedBox(width: 1.w),
+                              Text(
+                                'à 0,2 km',
+                                style: TextStyle(
+                                  fontFamily: "Cabin",
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Image.asset(
-                    'assets/icons/oc1.png',
-                  ),
-                ],
+                    Image.asset(
+                      'assets/icons/oc1.png',
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(4.w),
-              child: const Slider1Page(),
-            ),
-            _buildReservationContainer(context),
-          ],
+              SizedBox(height: 2.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: const Slider1Page(),
+              ),
+              SizedBox(height: 2.h),
+              _buildReservationContainer(context),
+              SizedBox(height: 2.h),
+            ],
+          ),
         ),
       ),
     );
@@ -99,6 +102,7 @@ class TerrainPage extends StatelessWidget {
 
   Widget _buildReservationContainer(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 2.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -111,10 +115,9 @@ class TerrainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "À partir de  ",
+                    "À partir de ",
                     style: TextStyle(
                       color: Color(0xFF1A1A1A),
                       fontWeight: FontWeight.w500,
@@ -169,6 +172,7 @@ class TerrainPage extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 1.h),
           const Divider(
             color: Colors.grey,
             thickness: 0.5,
@@ -199,16 +203,16 @@ class TerrainPage extends StatelessWidget {
             thickness: 0.5,
             height: 1,
           ),
-          SizedBox(height: 0.5.h),
+          SizedBox(height: 1.h),
           Text(
             'Caractéristiques',
             style: TextStyle(
-              fontSize: 12.sp,
+              fontSize: 13.sp,
               fontFamily: 'Cabin',
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 1.5.h),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -225,6 +229,7 @@ class TerrainPage extends StatelessWidget {
               SizedBox(height: 0.5.h),
               _buildCharacteristicRow('Accessibilité', 'Parking disponible',
                   backgroundColor: Colors.grey[200]),
+              SizedBox(height: 1.h),
               _buildLocationRow(),
             ],
           ),
@@ -287,7 +292,7 @@ class TerrainPage extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Cabin',
                 color: const Color(0xFFEA7C17),
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w400,
                 fontSize: 12.sp,
               ),
             ),

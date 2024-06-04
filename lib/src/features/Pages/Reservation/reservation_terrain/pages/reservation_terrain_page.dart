@@ -7,6 +7,7 @@ class ReservTerrainPage extends StatefulWidget {
   const ReservTerrainPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ReservTerrainPageState createState() => _ReservTerrainPageState();
 }
 
@@ -156,29 +157,29 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
               children: [
                 _buildDateButton(
                   context,
-                  "Auj",
-                  "31",
+                  "Auj.",
+                  "15",
                   isSelected: selectedIndex == 0,
                   onPressed: () => setSelectedIndex(0),
                 ),
                 _buildDateButton(
                   context,
-                  "Mar",
-                  "01",
+                  "Mer",
+                  "16",
                   isSelected: selectedIndex == 1,
                   onPressed: () => setSelectedIndex(1),
                 ),
                 _buildDateButton(
                   context,
                   "Jeu",
-                  "02",
+                  "17",
                   isSelected: selectedIndex == 2,
                   onPressed: () => setSelectedIndex(2),
                 ),
                 _buildDateButton(
                   context,
                   "Ven",
-                  "03",
+                  "18",
                   isSelected: selectedIndex == 3,
                   onPressed: () => setSelectedIndex(3),
                 ),
@@ -199,7 +200,7 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
                           style: TextStyle(
                             fontSize: 25.sp,
                             fontFamily: 'Cabin',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         SizedBox(height: 0.5.h),
@@ -511,21 +512,33 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
             Row(
               children: [
                 Expanded(
-                  child: Text(
-                    'TOTAL',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
+                  child: Container(
+                    height: 4.h,
+                    width: double.infinity,
+                    color: Colors.white,
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment
+                          .spaceBetween, // Espacement automatique entre les éléments internes
+                      children: [
+                        Text(
+                          'TOTAL',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Spacer(),
+                        Text(
+                          '20 000 F',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      ],
                     ),
-                  ),
-                ),
-                Text(
-                  '20 000 F',
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
@@ -553,9 +566,9 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xFF1A1A1A),
                 onPrimary: Colors.white,
-                minimumSize: Size(60.w, 5.h),
-                textStyle: TextStyle(
-                  fontSize: 12.sp,
+                minimumSize: Size(50.w, 5.h),
+                textStyle: const TextStyle(
+                  fontSize: 18,
                   fontFamily: 'Cabin',
                   fontWeight: FontWeight.w600,
                 ),
@@ -572,10 +585,10 @@ class _ReservTerrainPageState extends State<ReservTerrainPage> {
       {bool isSelected = false, VoidCallback? onPressed}) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: isSelected ? Colors.orange : Colors.white,
+        primary: isSelected ? const Color(0xFFEA7C17) : Colors.white,
         onPrimary: isSelected ? Colors.white : Colors.black,
         side: BorderSide(
-          color: isSelected ? Colors.orange : Colors.black,
+          color: isSelected ? const Color(0xFFEA7C17) : Colors.black,
         ),
         padding: EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 4.w),
       ),
